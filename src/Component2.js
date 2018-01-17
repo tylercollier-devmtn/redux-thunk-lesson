@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { showNotification, hideNotification } from './reducer';
+import { showAndHideNotification } from './reducer';
 
 class Component2 extends Component {
   constructor() {
@@ -11,11 +11,7 @@ class Component2 extends Component {
   doThingAndShowNotification() {
     // This setTimeout simulates any async operation, e.g. an axios call.
     setTimeout(() => {
-      this.props.showNotification('Did thing from component 2');
-      // This setTimeout has nothing to do with the axios call. We just want to show the notification for a certain amount of time and then hide it.
-      setTimeout(() => {
-        this.props.hideNotification();
-      }, 1500)
+      this.props.showAndHideNotification('Did thing from component 2');
     }, 1500);
   }
 
@@ -27,8 +23,7 @@ class Component2 extends Component {
 };
 
 const mapDispatchToProps = {
-  showNotification: showNotification,
-  hideNotification: hideNotification
+  showAndHideNotification: showAndHideNotification
 };
 
 export default connect(null, mapDispatchToProps)(Component2);
