@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
+import Component1 from './Component1';
 
 class App extends Component {
   render() {
-    const { showNotification, text } = this.props;
+    const { shouldShowNotification, text } = this.props;
 
     return (
       <div>
@@ -18,7 +19,10 @@ class App extends Component {
             To get started, edit <code>src/App.js</code> and save to reload.
           </p>
         </div>
-        {showNotification && <div className="notification">{text}
+        <div className="flex">
+          <div className="component"><Component1 /></div>
+        </div>
+        {shouldShowNotification && <div className="notification">{text}
         </div>}
       </div>
     );
@@ -27,7 +31,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    showNotification: state.showNotification,
+    shouldShowNotification: state.shouldShowNotification,
     text: state.text,
   };
 };

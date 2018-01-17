@@ -2,7 +2,7 @@ const SHOW_NOTIFICATION = 'SHOW_NOTIFICATION';
 const HIDE_NOTIFICATION = 'HIDE_NOTIFICATION';
 
 const initialState = {
-  showNotification: false,
+  shouldShowNotification: false,
   text: null,
 };
 
@@ -22,9 +22,9 @@ export function hideNotification() {
 export default (state = initialState, action) => {
   switch (action.type) {
     case SHOW_NOTIFICATION:
-      return { ...state, showNotification: true, text: action.payload };
+      return { ...state, shouldShowNotification: true, text: action.payload };
     case HIDE_NOTIFICATION:
-      return { ...state, showNotification: false, text: null };
+      return { ...state, shouldShowNotification: false, text: null };
     default:
       return state;
   }

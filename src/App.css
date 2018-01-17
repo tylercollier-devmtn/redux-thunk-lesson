@@ -35,3 +35,16 @@
   height: 100px;
   background-color: lightgoldenrodyellow;
 }
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.component {
+  flex: 1;
+  text-align: center;
+  margin: 10px;
+  padding: 50px;
+  border: 2px lightblue dashed;
+}
