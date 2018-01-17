@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import Component1 from './Component1';
+import Component2 from './Component2';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
         </div>
         <div className="flex">
           <div className="component"><Component1 /></div>
+          <div className="component"><Component2 /></div>
         </div>
         {shouldShowNotification && <div className="notification">{text}
         </div>}
