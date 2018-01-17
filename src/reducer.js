@@ -26,8 +26,7 @@ export function showAndHideNotification(text) {
       dispatch(showNotification(text));
       setTimeout(() => {
         dispatch(hideNotification());
-      }, 500)
-      dis
+      }, 1500)
     }
   }
 }
